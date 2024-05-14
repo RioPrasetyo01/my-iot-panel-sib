@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('pin');
             $table->boolean('status') -> default(false);
-            $table->timestamps();
+            $table->timestamps(); 
         });
     }
 

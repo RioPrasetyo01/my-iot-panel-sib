@@ -7,6 +7,8 @@ use App\Http\Controllers\SaklarController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TemperatureController;
+use App\Http\Controllers\LedController;
+use App\Models\Temperature;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +39,11 @@ Route::controller(SaklarController::class)->group(function () {
 Route::controller(AuthController::class)->group(function () {
     Route::get('/', 'index')->name('login');
 });
-
-Route::get('/temperatures', [TemperatureController::class, 'index'])
-    ->name('temperatures');
+Route::controller(TemperatureController::class)->group(function () {
+    Route::get('/temperatures', 'index')->name('temperatures');
+});
+// Route::get('/temperatures', [TemperatureController::class, 'index']) ->name('temperatures');
+Route::controller(LedController::class)->group(function () {
+    Route::get('/leds', 'index')->name('led.index');
+    Route::post('/leds', 'store')->name('led.store');
+});

@@ -22,8 +22,8 @@
             </li>
 
             <!-- Nav Item - LED Control -->
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ route('dashboard') }}">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('led.index') }}">
                     <i class="fas fa-lightbulb"></i>
                     <span>LED Control</span></a>
             </li>
